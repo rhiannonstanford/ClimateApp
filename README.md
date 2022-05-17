@@ -1,4 +1,4 @@
-#  Clima
+#  Climate
 
 ## App 📱
 

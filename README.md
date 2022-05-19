@@ -16,7 +16,7 @@ This weather app is dark-mode enabled.  A user is able to check the weather for 
 * Swift computed properties.
 * Swift closures and completion handlers.
 * Uses URLSession to network and make HTTP requests.
-* Parse JSON with the native Encodable and Decodable protocols. 
+* Parses JSON with the native Encodable and Decodable protocols. 
 * Uses Grand Central Dispatch to fetch the main thread.
 * Uses Core Location to get the current location from the phone GPS. 
 

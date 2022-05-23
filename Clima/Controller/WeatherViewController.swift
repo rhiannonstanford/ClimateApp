@@ -15,6 +15,9 @@ class WeatherViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     
+    var weatherManager = WeatherManager()
+    
+    
     @IBAction func searchPressed(_ sender: UIButton) {
         print("searchPressed", searchTextField.text!)
         searchTextField.endEditing(true) // dismisses keyboard
@@ -33,11 +36,7 @@ class WeatherViewController: UIViewController,  UITextFieldDelegate {
         // user pressed return key
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // triggered when any text field is done editing
-        searchTextField.text = ""
-        // only gets called when they keyboard is hidden, and so then we clear the text field
-    }
+
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
@@ -50,6 +49,20 @@ class WeatherViewController: UIViewController,  UITextFieldDelegate {
         //  should end comes right before the keyboard is dismissed
     }
 
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        // Get the weather for the city.
+        // If searchTextField.text is a value, assign it to city using if let, ensures the string optional is handled right
+        if let city = searchTextField.text {
+            weatherManager.fetchWeather(cityName: city)
+        }
+        // unwrap the optional string and make it a string
+            
+            
+        // triggered when any text field is done editing
+        searchTextField.text = ""
+        // only gets called when they keyboard is hidden, and so then we clear the text field
+    }
+    
 
 }
 

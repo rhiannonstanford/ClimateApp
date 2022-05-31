@@ -18,7 +18,8 @@ struct WeatherData: Decodable {
     let clouds: Clouds
     let dt: Double
     let sys: Sys
-    let timezone: TimeZone
+    let timezone: Int
+//    let timezone: TimeZone
     let id: Int
     let name: String
     let cod: Int
@@ -30,7 +31,7 @@ struct Coord: Decodable {
 }
 
 struct Weather: Decodable {
-    let id: Double
+    let id: Int
     let main: String
     let description: String
     let icon: String

@@ -63,6 +63,10 @@ class WeatherViewController: UIViewController,  UITextFieldDelegate {
         // only gets called when they keyboard is hidden, and so then we clear the text field
     }
     
+    func didUpdateWeather(weather: Weather) {
+        print("in the delegate", weather)
+    }
+    
 
 }
 
